@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652895476795,
+  "timestamp": 1652897973266,
   "index": "/TP2-PaulZIOLKOWSKI/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/TP2-PaulZIOLKOWSKI/favicon.ico",
         "/TP2-PaulZIOLKOWSKI/index.html",
-        "/TP2-PaulZIOLKOWSKI/main.8a2da27ca11856b4.js",
+        "/TP2-PaulZIOLKOWSKI/main.99baac69e2a8176a.js",
         "/TP2-PaulZIOLKOWSKI/manifest.webmanifest",
         "/TP2-PaulZIOLKOWSKI/polyfills.87f7811fce05cb0f.js",
         "/TP2-PaulZIOLKOWSKI/runtime.6fdf035918431d56.js",
@@ -45,11 +45,12 @@
     {
       "name": "api-fresh",
       "patterns": [
-        "https:\\/\\/my-json-server\\.typicode\\.com\\/Polytech-Paris-Sud-Web\\/TP2-PaulZIOLKOWSKI\\/[^/]*",
+        "https:\\/\\/my-json-server\\.typicode\\.com\\/Polytech-Paris-Sud-Web\\/TP2-PaulZIOLKOWSKI\\/.*",
         "\\/",
         "\\/authors",
+        "\\/author\\/.*",
         "\\/articles",
-        "\\/article\\/[^/]*"
+        "\\/article\\/.*"
       ],
       "strategy": "freshness",
       "maxSize": 100,
@@ -71,8 +72,8 @@
     "/TP2-PaulZIOLKOWSKI/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/TP2-PaulZIOLKOWSKI/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/TP2-PaulZIOLKOWSKI/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/TP2-PaulZIOLKOWSKI/index.html": "b475eca5f89a2309578732432f19035c299e0d2e",
-    "/TP2-PaulZIOLKOWSKI/main.8a2da27ca11856b4.js": "450845276d8a6eecca38df212c411dbe018eb094",
+    "/TP2-PaulZIOLKOWSKI/index.html": "b3347188cb17c496f0dab7476c0c661dcb27e949",
+    "/TP2-PaulZIOLKOWSKI/main.99baac69e2a8176a.js": "c4a366f6c3cfdbc1f0b728cf462ff7aa790a5d63",
     "/TP2-PaulZIOLKOWSKI/manifest.webmanifest": "c0e252f16cd08005e12fe72b1a08310b206a6992",
     "/TP2-PaulZIOLKOWSKI/polyfills.87f7811fce05cb0f.js": "28365ce2566e931370e475178699a31b94e20e00",
     "/TP2-PaulZIOLKOWSKI/runtime.6fdf035918431d56.js": "bc6dbeae72d8c0ab48940b5121090162bf041839",
