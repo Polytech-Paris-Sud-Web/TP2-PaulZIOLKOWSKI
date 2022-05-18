@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Article} from '../models/article';
-import {ArticleService} from '../article.service';
+import {ArticleSource} from '../core/article/article.source';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -13,16 +13,16 @@ export class ArticleDetailsComponent implements OnInit {
   @Input()
   article: Article;
 
-  constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private articleSource: ArticleSource, private route: ActivatedRoute, private router: Router) { }
 
   delete() {
-    this.articleService.deleteArticle(this.article).subscribe(() => this.router.navigateByUrl('/'));
+    this.articleSource.deleteArticle(this.article).subscribe(() => this.router.navigateByUrl('/'));
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const articleId = params['id'];
-      this.articleService.getArticle(articleId).subscribe(it => this.article = it);
+      this.articleSource.getArticle(articleId).subscribe(it => this.article = it);
     });
   }
 }

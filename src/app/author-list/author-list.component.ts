@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Author} from "../models/author";
-import {AuthorService} from "../author.service";
+import { Author } from "../models/author";
+import { AuthorSource } from "../core/author/author.source";
 
 @Component({
   selector: 'app-author-list',
@@ -12,12 +12,12 @@ export class AuthorListComponent implements OnInit {
 
   authors: Author[];
 
-  constructor(private authorService: AuthorService) {
+  constructor(private authorSource: AuthorSource) {
     this.authors = [] ;
   }
   
   getAuthors() {
-      this.authorService.getAuthors().subscribe(it => {
+      this.authorSource.getAuthors().subscribe(it => {
           this.authors = it;
       });
   }

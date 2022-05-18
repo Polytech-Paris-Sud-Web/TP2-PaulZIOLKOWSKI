@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Author} from "../models/author";
-import {AuthorService} from "../author.service";
+import {AuthorSource} from "../core/author/author.source";
+import { ArticleSource } from '../core/article/article.source';
 
 @Component({
   selector: 'app-author',
@@ -14,11 +15,11 @@ export class AuthorComponent implements OnInit {
 
   numberArticles: number;
 
-  constructor(private authorService: AuthorService) { }
+  constructor(private authorSource: AuthorSource, private articleSource: ArticleSource) { }
 
   ngOnInit(): void {
     
-    this.authorService.getNumberArticles(this.author.name).subscribe(it => {
+    this.articleSource.getNumberArticlesFromAuthor(this.author.name).subscribe(it => {
         this.numberArticles = it;
     });
   }

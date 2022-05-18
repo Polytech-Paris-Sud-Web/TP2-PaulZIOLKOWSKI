@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Author } from '../models/author';
-import { AuthorService  } from '../author.service';
+import { AuthorSource  } from '../core/author/author.source';
 import { Article } from '../models/article';
-import { ArticleService  } from '../article.service';
+import { ArticleSource  } from '../core/article/article.source';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -17,19 +17,19 @@ export class AuthorBiographieComponent implements OnInit {
 
   articles: Article[];
 
-  constructor(private authorService: AuthorService,private articleService: ArticleService, private route: ActivatedRoute) { }
+  constructor(private authorSource: AuthorSource,private articleSource: ArticleSource, private route: ActivatedRoute) { }
 
   loadBio() {
     this.route.params.subscribe(params => {
       const name = params['name'];
-      this.authorService.getAuthor(name).subscribe(it => this.author = it );
+      this.authorSource.getAuthor(name).subscribe(it => this.author = it );
     });
 
   }
   loadBiblio() {
     this.route.params.subscribe(params => {
       const name = params['name'];
-      this.articleService.getArticlesOfAuthor(name).subscribe(it => this.articles = it );
+      this.articleSource.getArticlesOfAuthor(name).subscribe(it => this.articles = it );
     });
   }
 
@@ -39,6 +39,6 @@ export class AuthorBiographieComponent implements OnInit {
   }
 
   deleteArticle(article: Article) {
-    this.articleService.deleteArticle(article).subscribe(() => this.loadBiblio());
+    this.articleSource.deleteArticle(article).subscribe(() => this.loadBiblio());
   }
 }
