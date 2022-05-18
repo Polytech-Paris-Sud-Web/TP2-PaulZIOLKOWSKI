@@ -36,7 +36,6 @@ const appRoutes: Routes = [
   { path: 'authors', component: AuthorListComponent }
 ]
 
-console.log("Test"+environment.production);
 @NgModule({
   declarations: [
     AppComponent,
