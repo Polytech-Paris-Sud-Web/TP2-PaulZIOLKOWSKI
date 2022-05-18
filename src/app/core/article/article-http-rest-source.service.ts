@@ -1,22 +1,29 @@
 import { Injectable } from '@angular/core';
 import {Article, CreateArticle} from '../../models/article'; 
 import {HttpClient} from "@angular/common/http";
-import {map, Observable} from "rxjs";  
+import { Observable, of} from "rxjs";  
 import { ArticleSource } from './article.source'
 import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleHttpRestSource implements ArticleSource {
 
+  private articles: Observable<Article[]>
+  ; 
   constructor(private http : HttpClient) {
+    this.articles = this.http.get<Article[]>(environment.db_url+"/articles?_sort=createdAt&_order=desc");
   }
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(environment.db_url+"/articles?_sort=createdAt&_order=desc"); 
+    return this.articles;
   }
   public getArticle(id: number): Observable<Article> {
-    return this.http.get<Article>(environment.db_url+"/articles/"+id); 
+    const article =  this.articles.pipe(
+      map(articles => articles.find(article => article.id == id))
+    );
+    return article as Observable<Article>;
   }
   public getLastsArticles(): Observable<Article[]> {
     return this.http.get<Article[]>(environment.db_url+"/articles?_sort=createdAt&_order=desc&_start=0&_end=10"); 
@@ -39,3 +46,4 @@ export class ArticleHttpRestSource implements ArticleSource {
   }
 
 }
+
