@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652901110923,
+  "timestamp": 1652902142850,
   "index": "/TP2-PaulZIOLKOWSKI/index.html",
   "assetGroups": [
     {
@@ -47,7 +47,7 @@
       "patterns": [
         "https:\\/\\/my-json-server\\.typicode\\.com\\/Polytech-Paris-Sud-Web\\/TP2-PaulZIOLKOWSKI\\/.*"
       ],
-      "strategy": "performance",
+      "strategy": "freshness",
       "maxSize": 100,
       "maxAge": 259200000,
       "timeoutMs": 10000,
