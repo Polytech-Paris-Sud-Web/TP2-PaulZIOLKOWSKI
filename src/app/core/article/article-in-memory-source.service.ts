@@ -8,7 +8,6 @@ export class ArticleInMemorySource implements ArticleSource {
   constructor(private articles : Article[] = [] ) {   }
   
   public getArticles(): Observable<Article[]> {
-    console.log(this.articles);
     return of(
       this.articles
         .sort( (a,b) => {
@@ -65,7 +64,6 @@ export class ArticleInMemorySource implements ArticleSource {
     }
 
     this.articles.push(newArticle);
-    console.log(this.articles);
     return of(newArticle);
 
   }

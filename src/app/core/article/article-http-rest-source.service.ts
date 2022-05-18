@@ -13,7 +13,7 @@ export class ArticleHttpRestSource implements ArticleSource {
   constructor(private http : HttpClient) {
   }
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(environment.db_url+"/articles"); 
+    return this.http.get<Article[]>(environment.db_url+"/articles?_sort=createdAt&_order=desc"); 
   }
   public getArticle(id: number): Observable<Article> {
     return this.http.get<Article>(environment.db_url+"/articles/"+id); 

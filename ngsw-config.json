@@ -26,5 +26,24 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name":"api-fresh",
+      "urls":[
+        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/*",
+        "/",
+        "/authors",
+        "/articles",
+        "/article/*"
+      ],
+      "cacheConfig": 
+      {
+        "strategy": "freshness",
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "10s"
+      }
+    }
   ]
 }
