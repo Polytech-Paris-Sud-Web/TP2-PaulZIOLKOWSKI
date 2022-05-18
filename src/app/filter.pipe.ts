@@ -8,16 +8,7 @@ export class FilterPipe implements PipeTransform {
 
   transform(articles: Article[], searchText: any): any {
     if (searchText === undefined) {
-      return articles
-        .sort(
-          (first: Article, second: Article) =>  {
-            if (typeof first.id === 'undefined' || typeof second.id === 'undefined') {
-              return 0;
-            }
-            return (first.id < second.id ? 1 : -1)
-    
-          })
-        .slice(0,10);
+      return articles;
     }
 
     searchText = searchText.toLowerCase();
@@ -26,15 +17,6 @@ export class FilterPipe implements PipeTransform {
         article =>
             article.title.toLowerCase().includes(searchText)
             || article.content.toLowerCase().includes(searchText)
-    )
-    .sort(
-      (first: Article, second: Article) =>  {
-        if (typeof first.id === 'undefined' || typeof second.id === 'undefined') {
-          return 0;
-        }
-        return (first.id < second.id ? 1 : -1)
-
-      })
-    .slice(0, 10);
+    );
   }
 }

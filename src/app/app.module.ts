@@ -25,16 +25,18 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthorHttpRestSource } from './core/author/author-http-rest-source.service';
 import { AuthorInMemorySource } from './core/author/author-in-memory-source.service';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
-  { path: 'articles', component: ArticlesComponent },
+  { path: 'articles', component: ArticlesListComponent },
   { path: '', component: ArticlesComponent },
   { path: 'article/:id', component: ArticleDetailsComponent },
   { path: 'author/:name', component: AuthorBiographieComponent },
   { path: 'authors', component: AuthorListComponent }
 ]
 
+console.log("Test"+environment.production);
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     ArticleDetailsComponent,
     AuthorBiographieComponent,
     AuthorListComponent,
-    AuthorComponent
+    AuthorComponent,
+    ArticlesListComponent
   ],
   imports: [
     RouterModule.forRoot(

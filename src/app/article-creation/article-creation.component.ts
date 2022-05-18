@@ -25,7 +25,9 @@ export class ArticleCreationComponent implements OnInit {
     const newArticle = {
       title : formModel.title,
       content : formModel.content,
-      author : formModel.author
+      author : formModel.author,
+      createdAt: Date.now(),
+      deletedAt: 0
     };
 
     this.articleSource.createArticle(newArticle).subscribe(() => this.router.navigateByUrl('/'));

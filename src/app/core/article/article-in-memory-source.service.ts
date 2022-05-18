@@ -8,7 +8,18 @@ export class ArticleInMemorySource implements ArticleSource {
   constructor(private articles : Article[] = [] ) {   }
   
   public getArticles(): Observable<Article[]> {
-    return of(this.articles);
+    console.log(this.articles);
+    return of(
+      this.articles
+        .sort( (a,b) => {
+          if(a.createdAt < b.createdAt) {
+            return 1;
+          }
+          else {
+            return 0;
+          }
+        })
+    );
   }
   public getArticle(id: number): Observable<Article> {
     const article = this.articles.find( _ => _.id == id)
@@ -18,6 +29,20 @@ export class ArticleInMemorySource implements ArticleSource {
     else {
       throw new Error(`Article not found for id $(id)`)
     }
+  }
+  public getLastsArticles(): Observable<Article[]> {
+    return of(
+      this.articles
+        .sort( (a,b) => {
+          if(a.createdAt < b.createdAt) {
+            return 1;
+          }
+          else {
+            return 0;
+          }
+        })
+        .slice(10)
+    );
   }
 
   public getArticlesOfAuthor(name: string): Observable<Article[]> {    
@@ -34,10 +59,13 @@ export class ArticleInMemorySource implements ArticleSource {
       id: this.articles.length, 
       title: Article.title,
       content: Article.content,
-      author: Article.author
+      author: Article.author,
+      createdAt: Article.createdAt,
+      deletedAt : Article.deletedAt
     }
 
     this.articles.push(newArticle);
+    console.log(this.articles);
     return of(newArticle);
 
   }

@@ -2,7 +2,9 @@ export interface Article {
     id: number, 
     title : string,
     content : string,
-    author : string
+    author : string,
+    createdAt: number,
+    deletedAt: number
 };
 
 // Mieux de ne pas avoir d'optionnal,
@@ -10,5 +12,7 @@ export interface Article {
 export interface CreateArticle {
     title : string,
     content : string,
-    author : string
+    author : string,
+    createdAt: number,
+    deletedAt: number
 };

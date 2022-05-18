@@ -2,6 +2,7 @@
     <div class="card-title"><a routerLink="/article/{{article.id}}"> <h3 class="text-center"> {{article.title}} </h3></a></div>
     <div class="card-body">
         <p> by: <a routerLink="/author/{{article.author}}">{{article.author}}</a> </p>
+        <p>{{ article.createdAt | date:'dd/MM/yyyy H:m:s'}}</p>
         <p class="text-center"><button class="btn btn-danger mb-1" (click)="delete()">Delete</button></p>
     </div>
 </div>

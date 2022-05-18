@@ -1,14 +1,8 @@
-<div class="m-3">
-    <div class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="searchArticle"
-               [(ngModel)]="searchText" [ngModelOptions]="{standalone:true }">
-    </div>
-</div>
-    
+<h1>Last 10 articles</h1>
 <div class=" row m-3">
         <app-article 
-            *ngFor="let article of this.articles | filter:searchText " 
-            [article]="article" 
+        *ngFor="let article of this.articles " 
+        [article]="article" 
             (deletedArticle)="delete($event)" 
             class="col-md-3" style="margin-bottom:5px;">
         </app-article>

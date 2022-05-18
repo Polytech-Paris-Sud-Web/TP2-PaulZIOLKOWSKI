@@ -18,6 +18,9 @@ export class ArticleHttpRestSource implements ArticleSource {
   public getArticle(id: number): Observable<Article> {
     return this.http.get<Article>(environment.db_url+"/articles/"+id); 
   }
+  public getLastsArticles(): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.db_url+"/articles?_sort=createdAt&_order=desc&_start=0&_end=10"); 
+  }
 
   public getArticlesOfAuthor(name: string): Observable<Article[]> {
     return this.http.get<Article[]>(environment.db_url+"/articles?author="+name); 

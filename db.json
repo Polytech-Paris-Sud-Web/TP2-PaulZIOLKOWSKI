@@ -4,55 +4,113 @@
       "id": 1,
       "title": "My First Article",
       "content": "Hello World",
-      "author": "Orangefire"
+      "author": "Orangefire",
+      "createdAt": 16528819081,
+      "deletedAt": 0
     },
     {
       "id": 2,
       "title": "Angular component",
       "content": "Angular component looks awesome!",
-      "author": "Orangefire"
+      "author": "Orangefire",
+      "createdAt": 165288619081,
+      "deletedAt": 0
     },
     {
       "id": 3,
       "title": "Angular service",
       "content": "I read something about angular service, i will try it soon",
-      "author": "Orangefire"
+      "author": "Orangefire",
+      "createdAt": 16528819081,
+      "deletedAt": 0
+    },
+    {
+      "title": "Fake Title",
+      "content": "One day at Polytech",
+      "author": "Paul ZIOLKOWSKI",
+      "id": 4,
+      "createdAt": 165288619081,
+      "deletedAt": 0
     },
     {
       "title": "testa",
       "content": "uef,lm",
       "author": "Paul ZIOLKOWSKI",
-      "id": 7
+      "id": 7,
+      "createdAt": 1652886610081,
+      "deletedAt": 0
     },
     {
       "title": "ezerf",
       "content": "zee",
       "author": "Paul ZIOLKOWSKI",
-      "id": 8
+      "id": 8,
+      "createdAt": 1632886619081,
+      "deletedAt": 0
     },
     {
       "title": "zeftrzerf",
       "content": "zerfzef",
       "author": "Paul ZIOLKOWSKI",
-      "id": 9
+      "id": 9,
+      "createdAt": 1651886619081,
+      "deletedAt": 0
     },
     {
       "title": "ezerf",
       "content": "zee",
       "author": "Paul ZIOLKOWSKI",
-      "id": 10
+      "id": 10,
+      "createdAt": 1652886619081,
+      "deletedAt": 0
     },
     {
       "title": "zeftrzerf",
       "content": "zerfzef",
       "author": "Paul ZIOLKOWSKI",
-      "id": 11
+      "id": 11,
+      "createdAt": 1652886619081,
+      "deletedAt": 0
     },
     {
       "title": "azer",
       "content": "azerzefr",
       "author": "Paul ZIOLKOWSKI",
-      "id": 12
+      "id": 12,
+      "createdAt": 1652886619081,
+      "deletedAt": 0
+    },
+    {
+      "title": "An fake article",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "author": "test",
+      "id": 13,
+      "createdAt": 1652886619081,
+      "deletedAt": 0
+    },
+    {
+      "title": "test",
+      "content": "test",
+      "author": "test",
+      "id": 14,
+      "createdAt": 1652886619081,
+      "deletedAt": 0
+    },
+    {
+      "title": "test 1",
+      "content": "test 2",
+      "author": "Paul ZIOLKOWSKI",
+      "createdAt": 1652886619081,
+      "deletedAt": 0,
+      "id": 15
+    },
+    {
+      "title": "Test date",
+      "content": "test",
+      "author": "Paul ZIOLKOWSKI",
+      "createdAt": 1652888203481,
+      "deletedAt": 0,
+      "id": 16
     }
   ],
   "authors": [
