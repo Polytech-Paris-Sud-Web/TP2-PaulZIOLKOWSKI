@@ -25,12 +25,24 @@ export class ArticleHttpRestSource implements ArticleSource {
     );
     return article as Observable<Article>;
   }
-  public getLastsArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(environment.db_url+"/articles?_sort=createdAt&_order=desc&_start=0&_end=10"); 
+  public getLastsArticles(): Observable<Article[]> {    
+    const articles =  this.articles.pipe(
+      map(articles => articles.slice(0,10))
+    );
+    return articles as Observable<Article[]>;
   }
 
   public getArticlesOfAuthor(name: string): Observable<Article[]> {
-    return this.http.get<Article[]>(environment.db_url+"/articles?author="+name); 
+    const articles =  this.articles.pipe(
+      map(articles => articles.filter(article => article.author == name))
+    );
+    return articles as Observable<Article[]>;
+  }
+
+  public getNumberArticlesFromAuthor(name: string) : Observable<number> {
+    return this.articles.pipe( 
+        map(articles => articles.length)
+      );
   }
 
   public deleteArticle(article: Article) : Observable<any>{
@@ -38,11 +50,6 @@ export class ArticleHttpRestSource implements ArticleSource {
   }
   public createArticle(Article: CreateArticle) : Observable<Article> {
     return this.http.post<Article>(environment.db_url+'/articles', Article);
-  }
-  public getNumberArticlesFromAuthor(name: string) : Observable<number> {
-    return this.http.get<Article[]>(environment.db_url+"/articles?author="+name).pipe( 
-        map(articles => articles.length)
-      );
   }
 
 }
