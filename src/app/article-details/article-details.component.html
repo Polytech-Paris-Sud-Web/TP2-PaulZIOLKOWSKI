@@ -1,8 +1,12 @@
-<div *ngIf="article">
-    <div class="center-block">
-      <a routerLink="/articles/{{article.id}}"> <h3> {{article.title}} </h3></a>
-      <p> by: <a routerLink="/author/{{article.author}}">{{article.author}}</a>  </p>
-      <p> {{article.content}}</p>
-      <button class="btn btn-danger" (click)="delete()">Delete</button>
-    </div>
-</div>
+<div *ngIf="article then known_article else unknown_article">Le contenu saisi ici sera ignoré.</div>
+<ng-template #known_article>
+  <div class="center-block">
+    <a routerLink="/articles/{{article.id}}"> <h3> {{article.title}} </h3></a>
+    <p> by: <a routerLink="/author/{{article.author}}">{{article.author}}</a>  </p>
+    <p> {{article.content}}</p>
+    <button class="btn btn-danger" (click)="delete()">Delete</button>
+  </div>
+</ng-template>
+<ng-template #unknown_article>
+  <p>Article inconnu</p>
+</ng-template>
