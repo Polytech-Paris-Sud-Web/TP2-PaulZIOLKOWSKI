@@ -31,7 +31,12 @@
     {
       "name":"api-fresh",
       "urls":[
-        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/**"
+        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/**",
+        "/",
+        "/authors",
+        "/author/**",
+        "/articles",
+        "/article/**"
       ],
       "cacheConfig": 
       {
