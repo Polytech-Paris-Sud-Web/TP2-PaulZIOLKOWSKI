@@ -1,0 +1,76 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "My First Article",
+      "content": "Hello World",
+      "author": "Orangefire"
+    },
+    {
+      "id": 2,
+      "title": "Angular component",
+      "content": "Angular component looks awesome!",
+      "author": "Orangefire"
+    },
+    {
+      "id": 3,
+      "title": "Angular service",
+      "content": "I read something about angular service, i will try it soon",
+      "author": "Orangefire"
+    },
+    {
+      "title": "Fake Title",
+      "content": "One day at Polytech",
+      "author": "Paul ZIOLKOWSKI",
+      "id": 4
+    },
+    {
+      "title": "testa",
+      "content": "uef,lm",
+      "author": "Paul ZIOLKOWSKI",
+      "id": 7
+    },
+    {
+      "title": "ezerf",
+      "content": "zee",
+      "author": "Paul ZIOLKOWSKI",
+      "id": 8
+    },
+    {
+      "title": "zeftrzerf",
+      "content": "zerfzef",
+      "author": "Paul ZIOLKOWSKI",
+      "id": 9
+    },
+    {
+      "title": "ezerf",
+      "content": "zee",
+      "author": "Paul ZIOLKOWSKI",
+      "id": 10
+    },
+    {
+      "title": "zeftrzerf",
+      "content": "zerfzef",
+      "author": "Paul ZIOLKOWSKI",
+      "id": 11
+    },
+    {
+      "title": "azer",
+      "content": "azerzefr",
+      "author": "Paul ZIOLKOWSKI",
+      "id": 12
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Paul ZIOLKOWSKI",
+      "biographie": "Une biographie intéressante serait de détailler ma vie... Mais est-ce que j'en ai le temps ? Pas vraiment..."
+    },
+    {
+      "id": 2,
+      "name": "Orangefire",
+      "biographie": "Professeur de Web Avancé"
+    }
+  ]
+}

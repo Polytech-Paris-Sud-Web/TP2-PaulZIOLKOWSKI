@@ -1,0 +1,17 @@
+<div *ngIf="author" class="row m-1">
+    <div class="col-md-6 col-sm-12">
+        <h1>{{ author.name }}</h1>
+        <p><span class='bi bi-quote'></span>{{ author.biographie }}</p>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <h1>Bibliographie</h1>
+        <div class="container-fluid row m-3">
+            <app-article 
+                *ngFor="let article of this.articles" 
+                [article]="article" 
+                (deletedArticle)="deleteArticle($event)" 
+                class="col-md-6 col-sm-12" style="margin-bottom:5px;">
+            </app-article>
+        </div>
+    </div>
+</div>
