@@ -10,6 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 > I also got help from a former student for some concepts and the setup of the application
 
 ## What I have done 
+### Features
 - All features mandatory : 
 - Search filter for Title and Content 
 - Limit 10 articles displayed (reverse, because we want the 10 last articles)
@@ -22,15 +23,16 @@ Also :
 - My app is instalable 
 - The app uses cache, with preloaded api calls
 
-## CI / CD :
+### CI / CD :
 - Linting
 - Deployment to https://polytech-paris-sud-web.github.io/TP2-PaulZIOLKOWSKI/
 
+### JSON SERVER
+I put online my own json-server : https://json-server.adh.auro.re/ (thanks to my lovely Raspberry Pi, and Aurore (ISP) for aliases)
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-Don't forget to launch the `json-server` ! 
 
 ## Code scaffolding
 
@@ -44,10 +46,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running lint
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `npm run lint` to execute the linter !
