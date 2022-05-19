@@ -70,7 +70,7 @@ const appRoutes: Routes = [
     {
         provide: ArticleSource, 
         useFactory: (httpClient : HttpClient) => {
-          if(!environment.production) {
+          if(environment.production) {
             return new ArticleHttpRestSource(httpClient);
           }
           else {
@@ -83,7 +83,7 @@ const appRoutes: Routes = [
     {
         provide: AuthorSource, 
         useFactory: (httpClient: HttpClient) => {
-          if(!environment.production) {
+          if(environment.production) {
             return new AuthorHttpRestSource(httpClient);
           }
           else {
