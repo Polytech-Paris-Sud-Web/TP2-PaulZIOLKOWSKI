@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {ArticleSource} from '../core/article/article.source';
 import {Router} from '@angular/router';
@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./article-creation.component.css']
 })
 
-export class ArticleCreationComponent implements OnInit {
+export class ArticleCreationComponent  {
   articleForm : FormGroup;
 
   constructor(private articleSource: ArticleSource, private fb: FormBuilder, private router: Router) {
@@ -31,9 +31,6 @@ export class ArticleCreationComponent implements OnInit {
     };
 
     this.articleSource.createArticle(newArticle).subscribe(() => this.router.navigateByUrl('/'));
-  }
-
-  ngOnInit(): void {
   }
 
 }
