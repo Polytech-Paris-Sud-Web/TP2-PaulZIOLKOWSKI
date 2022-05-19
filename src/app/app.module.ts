@@ -14,7 +14,6 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 
 import { ArticleSource} from "./core/article/article.source";
 import { ArticleHttpRestSource } from './core/article/article-http-rest-source.service';
-import { ArticleInMemorySource } from './core/article/article-in-memory-source.service';
 
 import { AuthorBiographieComponent } from './author-biographie/author-biographie.component';
 import { AuthorListComponent } from './author-list/author-list.component';
@@ -24,7 +23,6 @@ import { AuthorSource} from "./core/author/author.source";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthorHttpRestSource } from './core/author/author-http-rest-source.service';
-import { AuthorInMemorySource } from './core/author/author-in-memory-source.service';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 
 const appRoutes: Routes = [
@@ -70,12 +68,7 @@ const appRoutes: Routes = [
     {
         provide: ArticleSource, 
         useFactory: (httpClient : HttpClient) => {
-          if(environment.production) {
-            return new ArticleHttpRestSource(httpClient);
-          }
-          else {
-            return new ArticleInMemorySource;
-          }
+          return new ArticleHttpRestSource(httpClient);
         }, 
         deps: [HttpClient]
     
@@ -83,12 +76,7 @@ const appRoutes: Routes = [
     {
         provide: AuthorSource, 
         useFactory: (httpClient: HttpClient) => {
-          if(environment.production) {
-            return new AuthorHttpRestSource(httpClient);
-          }
-          else {
-            return new AuthorInMemorySource();
-          }
+          return new AuthorHttpRestSource(httpClient);
         }, 
         deps: [HttpClient]
     
