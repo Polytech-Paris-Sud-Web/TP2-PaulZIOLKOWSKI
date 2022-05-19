@@ -5,6 +5,7 @@ import { Observable, of} from "rxjs";
 import { ArticleSource } from './article.source'
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators'
+import { ArticlesListComponent } from 'src/app/articles-list/articles-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -51,15 +52,12 @@ export class ArticleHttpRestSource implements ArticleSource {
   }
 
   public getNumberArticlesFromAuthor(name: string) : Observable<number> {
-    if(!this.articles) {
-      this.preload().subscribe();
-    }
-    if(this.articles) {
-      return of(this.articles.length);
-    }
-    else {
-      return of(0);
-    }
+    const articles = this.getArticles().pipe(
+      map(articles => articles?.filter(article => article.author == name))
+    );
+    return articles.pipe(
+      map(articles => articles.length)
+    );
   }
 
   public deleteArticle(article: Article) : Observable<any>{
