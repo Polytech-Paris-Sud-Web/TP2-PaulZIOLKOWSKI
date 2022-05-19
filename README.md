@@ -1,18 +1,30 @@
+[![Build and Deploy](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/main.yml/badge.svg)](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/main.yml)
+
 # SimpleApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
 ## Thanks to
 > Thanks to Tom RAVANEL, Alexis DA COSTA, and Sébastien LEONCE for their help
+> 
 > I also got help from a former student for some concepts and the setup of the application
 
 ## What I have done 
-- All features mandatory : Use the `json-server`, delete an article, create an article, routes.
+- All features mandatory : 
 - Search filter for Title and Content 
 - Limit 10 articles displayed (reverse, because we want the 10 last articles)
 - Biographie of an author & bibliographie (ie, articles written by the author)
 - List of all authors & number of articles / author
 - Somme styles ...
+
+Also : 
+- My app is in production environment
+- My app is instalable 
+- The app uses cache, with preloaded api calls
+
+## CI / CD :
+- Linting
+- Deployment to https://polytech-paris-sud-web.github.io/TP2-PaulZIOLKOWSKI/
 
 
 ## Development server

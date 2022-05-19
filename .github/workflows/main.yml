@@ -14,3 +14,4 @@ jobs:
         github_access_token: ${{ secrets.ACCESS_TOKEN }}
         build_folder: dist/simple-app
         base_href: /TP2-PaulZIOLKOWSKI/
+        run_lint: true
