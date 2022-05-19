@@ -31,10 +31,11 @@ export class ArticleHttpRestSource implements ArticleSource {
   }
   
   public getArticle(id: number): Observable<Article> {
-    const article =  of(this.articles).pipe(
+    const article = this.getArticles().pipe(
       map(articles => articles?.find(article => article.id == id))
     );
     return article as Observable<Article>;
+    
   }
   public getLastsArticles(): Observable<Article[]> {
     return this.getArticles().pipe(
@@ -43,13 +44,16 @@ export class ArticleHttpRestSource implements ArticleSource {
   }
 
   public getArticlesOfAuthor(name: string): Observable<Article[]> {
-    const articles =  of(this.articles).pipe(
+    const articles =  this.getArticles().pipe(
       map(articles => articles?.filter(article => article.author == name))
     );
     return articles as Observable<Article[]>;
   }
 
   public getNumberArticlesFromAuthor(name: string) : Observable<number> {
+    if(!this.articles) {
+      this.preload().subscribe();
+    }
     if(this.articles) {
       return of(this.articles.length);
     }

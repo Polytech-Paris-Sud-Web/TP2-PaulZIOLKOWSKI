@@ -4,8 +4,7 @@ import { AuthorSource } from "../core/author/author.source";
 
 @Component({
   selector: 'app-author-list',
-  templateUrl: './author-list.component.html',
-  styleUrls: ['./author-list.component.css']
+  templateUrl: './author-list.component.html'
 })
 export class AuthorListComponent implements OnInit {
 

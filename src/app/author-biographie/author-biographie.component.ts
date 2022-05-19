@@ -7,8 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-author-biographie',
-  templateUrl: './author-biographie.component.html',
-  styleUrls: ['./author-biographie.component.css']
+  templateUrl: './author-biographie.component.html'
 })
 export class AuthorBiographieComponent implements OnInit {
 

@@ -5,8 +5,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-article-creation',
-  templateUrl: './article-creation.component.html',
-  styleUrls: ['./article-creation.component.css']
+  templateUrl: './article-creation.component.html'
 })
 
 export class ArticleCreationComponent  {

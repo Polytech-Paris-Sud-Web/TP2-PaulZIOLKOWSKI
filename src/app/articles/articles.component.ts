@@ -4,8 +4,7 @@ import {ArticleSource} from "../core/article/article.source";
 
 @Component({
   selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css']
+  templateUrl: './articles.component.html'
 })
 export class ArticlesComponent implements OnInit {
 
