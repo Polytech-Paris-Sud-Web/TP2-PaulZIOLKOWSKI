@@ -2,6 +2,7 @@ import {Article, CreateArticle} from '../../models/article';
 import {Observable} from "rxjs";  
 
 export abstract class ArticleSource {
+  public needReload : boolean;
   abstract preload() : Observable<Article[]>;
 
   abstract getArticles(): Observable<Article[]>;

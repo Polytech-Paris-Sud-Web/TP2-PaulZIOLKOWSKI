@@ -29,7 +29,12 @@ export class ArticleCreationComponent  {
       deletedAt: 0
     };
 
-    this.articleSource.createArticle(newArticle).subscribe(() => this.router.navigateByUrl('/'));
+    this.articleSource.createArticle(newArticle).subscribe(
+      () => {
+        this.router.navigateByUrl('/');
+        this.articleSource.needReload = true;
+      }
+    );
   }
 
 }

@@ -13,11 +13,12 @@ import { ArticlesListComponent } from 'src/app/articles-list/articles-list.compo
 export class ArticleHttpRestSource implements ArticleSource {
 
   private articles: Article[] | undefined; 
+  public needReload : boolean;
 
   constructor(private http : HttpClient) {  }
   
   public preload() : Observable<Article[]> {
-    if (!this.articles) {
+    if (!this.articles || this.needReload) {
       return this.http.get<Article[]>(`${environment.db_url}/articles?_sort=createdAt&_order=desc`).pipe(
         map(articles => {
           this.articles = articles;
@@ -28,6 +29,9 @@ export class ArticleHttpRestSource implements ArticleSource {
     return of(this.articles);
   }
   public getArticles(): Observable<Article[]> {
+    if(this.needReload) {
+      return this.preload();
+    }
     return this.articles ? of(this.articles) : this.preload() ;
   }
   
