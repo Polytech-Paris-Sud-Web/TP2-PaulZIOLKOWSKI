@@ -10,5 +10,5 @@ export abstract class AuthorSource {
   
   abstract getAuthors(): Observable<Author[]> ;
 
-
+  abstract preload() : Observable<Author[]> ;
 }

@@ -11,38 +11,51 @@ import { map } from 'rxjs/operators'
 })
 export class ArticleHttpRestSource implements ArticleSource {
 
-  private articles: Observable<Article[]>
-  ; 
-  constructor(private http : HttpClient) {
-    this.articles = this.http.get<Article[]>(environment.db_url+"/articles?_sort=createdAt&_order=desc");
+  private articles: Article[] | undefined; 
+
+  constructor(private http : HttpClient) {  }
+  
+  public preload() : Observable<Article[]> {
+    if (!this.articles) {
+      return this.http.get<Article[]>(`${environment.db_url}/articles?_sort=createdAt&_order=desc`).pipe(
+        map(articles => {
+          this.articles = articles;
+          return articles;
+        })
+      );
+    }
+    return of(this.articles);
   }
   public getArticles(): Observable<Article[]> {
-    return this.articles;
+    return this.articles ? of(this.articles) : this.preload() ;
   }
+  
   public getArticle(id: number): Observable<Article> {
-    const article =  this.articles.pipe(
-      map(articles => articles.find(article => article.id == id))
+    const article =  of(this.articles).pipe(
+      map(articles => articles?.find(article => article.id == id))
     );
     return article as Observable<Article>;
   }
-  public getLastsArticles(): Observable<Article[]> {    
-    const articles =  this.articles.pipe(
-      map(articles => articles.slice(0,10))
+  public getLastsArticles(): Observable<Article[]> {
+    return this.getArticles().pipe(
+      map(articles => articles.slice(0, 10))
     );
-    return articles as Observable<Article[]>;
   }
 
   public getArticlesOfAuthor(name: string): Observable<Article[]> {
-    const articles =  this.articles.pipe(
-      map(articles => articles.filter(article => article.author == name))
+    const articles =  of(this.articles).pipe(
+      map(articles => articles?.filter(article => article.author == name))
     );
     return articles as Observable<Article[]>;
   }
 
   public getNumberArticlesFromAuthor(name: string) : Observable<number> {
-    return this.articles.pipe( 
-        map(articles => articles.length)
-      );
+    if(this.articles) {
+      return of(this.articles.length);
+    }
+    else {
+      return of(0);
+    }
   }
 
   public deleteArticle(article: Article) : Observable<any>{

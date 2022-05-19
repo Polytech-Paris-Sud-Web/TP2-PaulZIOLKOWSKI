@@ -6,7 +6,8 @@ import { ArticleSource } from './article.source'
 export class ArticleInMemorySource implements ArticleSource {
 
   constructor(private articles : Article[] = [] ) {   }
-  
+  public preload() : Observable<Article[]> { return of([]) as Observable<Article[]>;  }
+
   public getArticles(): Observable<Article[]> {
     return of(
       this.articles

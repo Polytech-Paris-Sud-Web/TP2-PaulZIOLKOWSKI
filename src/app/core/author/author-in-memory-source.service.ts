@@ -21,4 +21,8 @@ export class AuthorInMemorySource {
     return of(this.authors);
   }
 
+  public preload() {
+    return of(undefined);
+  }
+
 }

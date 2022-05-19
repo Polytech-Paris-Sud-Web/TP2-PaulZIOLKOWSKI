@@ -29,16 +29,16 @@
   ],
   "dataGroups": [
     {
-      "name":"api-fresh",
+      "name":"api-datas",
       "urls":[
-        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/**"
+        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/**",
+        "http://localhost:300/**"
       ],
       "cacheConfig": 
       {
         "strategy": "freshness",
         "maxSize": 100,
-        "maxAge": "3d",
-        "timeout": "10s"
+        "maxAge": "3d"
       }
     }
   ]
