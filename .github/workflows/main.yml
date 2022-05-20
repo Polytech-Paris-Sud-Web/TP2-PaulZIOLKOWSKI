@@ -11,7 +11,7 @@ jobs:
     - name: Install
       run: npm install
     - name: Run test 🧪
-      run: npm run test
+      run: npm run test:prod
   lint:
     runs-on: ubuntu-latest
     steps:
