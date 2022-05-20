@@ -38,5 +38,4 @@ describe('ArticleComponent', () => {
   it('Article is accessible', () => {
     expect(component.article).toBeTruthy();
   });
-  
 });
