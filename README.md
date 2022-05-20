@@ -1,4 +1,5 @@
 [![Build and Deploy](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/main.yml/badge.svg)](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/main.yml)
+[![pages-build-deployment](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/pages/pages-build-deployment)
 
 # SimpleApp
 
