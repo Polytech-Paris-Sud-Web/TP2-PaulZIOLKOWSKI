@@ -30,7 +30,7 @@ jobs:
       run: npm run prettier
   build:
     runs-on: ubuntu-latest
-    needs: [test, lint]
+    needs: [test, lint, prettier]
     steps:
     - uses: actions/checkout@v2
     - name: Angular Deploy gh-pages Actions
