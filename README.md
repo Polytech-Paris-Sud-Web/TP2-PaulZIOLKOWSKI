@@ -1,4 +1,13 @@
 [![Build and Deploy](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/main.yml/badge.svg)](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/main.yml)
+[![pages-build-deployment](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI/actions/workflows/pages/pages-build-deployment)
+<img src="https://img.shields.io/github/commit-activity/m/Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI" />
+
+
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
 # SimpleApp
 
@@ -29,6 +38,9 @@ Also :
 
 ### JSON SERVER
 I put online my own json-server : https://json-server.adh.auro.re/ (thanks to my lovely Raspberry Pi, and Aurore (ISP) for aliases)
+
+### Contributors
+![GitHub Contributors Image](https://contrib.rocks/image?repo=Polytech-Paris-Sud-Web/TP2-PaulZIOLKOWSKI)
 
 ## Development server
 
