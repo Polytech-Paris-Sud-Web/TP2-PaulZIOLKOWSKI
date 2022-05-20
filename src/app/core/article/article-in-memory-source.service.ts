@@ -27,7 +27,7 @@ export class ArticleInMemorySource implements ArticleSource {
     if (article) {
       return of(article);
     } else {
-      throw new Error(`Article not found for id $(id)`);
+      throw new Error(`Article not found for id ${id}`);
     }
   }
   public getLastsArticles(): Observable<Article[]> {

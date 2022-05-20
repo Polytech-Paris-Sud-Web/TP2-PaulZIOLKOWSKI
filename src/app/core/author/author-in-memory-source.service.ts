@@ -11,7 +11,7 @@ export class AuthorInMemorySource {
     if (author) {
       return of(author);
     } else {
-      throw new Error(`Author not found for name $(name)`);
+      throw new Error(`Author not found for name ${name}`);
     }
   }
 
