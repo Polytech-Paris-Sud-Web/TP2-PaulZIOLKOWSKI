@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   db_url: 'https://json-server.adh.auro.re',
-  appVersion: require('../../package.json').version
+  appVersion: require('../../package.json').version,
 };
 
 /*

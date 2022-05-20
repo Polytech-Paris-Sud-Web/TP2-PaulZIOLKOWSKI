@@ -2,10 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Article } from './models/article';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
-
   transform(articles: Article[], searchText: any): any {
     if (searchText === undefined) {
       return articles;
@@ -14,9 +13,8 @@ export class FilterPipe implements PipeTransform {
     searchText = searchText.toLowerCase();
 
     return articles.filter(
-        article =>
-            article.title.toLowerCase().includes(searchText)
-            || article.content.toLowerCase().includes(searchText)
+      (article) =>
+        article.title.toLowerCase().includes(searchText) || article.content.toLowerCase().includes(searchText)
     );
   }
 }
