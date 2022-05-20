@@ -34,4 +34,9 @@ describe('ArticleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Article is accessible', () => {
+    expect(component.article).toBeTruthy();
+  });
+  
 });
